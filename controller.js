@@ -1,33 +1,39 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const { API, roomIds, getImageSetlist } = require("./helpers");
+const { roomIds, getImageSetlist } = require("./helpers");
 
 exports.getMostWatchRoom = async (req, res) => {
   try {
+    const { token } = req.body;
     const promises = Object.values(roomIds).map(async (room_id) => {
-      const response = await axios.post(API, {
-        room_id: room_id,
-        cookie: req.body.token,
-      });
+      const response = await axios.get(
+        `https://www.showroom-live.com/api/room/profile?room_id=${room_id}`,
+        {
+          headers: {
+            Cookie: token || "",
+          },
+        }
+      );
 
       return response.data;
     });
 
-    const room = await Promise.all(promises);
+    const roomData = await Promise.all(promises);
 
-    const mostVisitRoom = room
-      .map((item) => {
-        return {
-          name: item?.room_url_key?.replace("JKT48_", ""),
-          image: item?.image_square?.replace("_m.jpeg", "_l.jpeg"),
-          visit: item?.visit_count,
-        };
-      })
+    const mostVisitRoom = roomData
+      .map((item) => ({
+        name: item.room_url_key ? item.room_url_key.replace("JKT48_", "") : "",
+        image: item.image_square
+          ? item.image_square.replace("_m.jpeg", "_l.jpeg")
+          : "",
+        visit: item.visit_count || 0,
+      }))
       .sort((a, b) => b.visit - a.visit);
 
     res.send(mostVisitRoom);
   } catch (error) {
-    console.log(error);
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
   }
 };
 

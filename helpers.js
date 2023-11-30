@@ -1,5 +1,3 @@
-const API = "https://laravel-showroom-api.vercel.app/api/profile/room";
-
 const roomIds = [
   317738, 318117, 318118, 318204, 318207, 318208, 318209, 318222, 318223,
   318224, 318225, 318228, 318232, 318227, 318230, 318112, 318218, 318210,
@@ -24,4 +22,4 @@ const getImageSetlist = (name) => {
   }
 };
 
-module.exports = { API, roomIds, getImageSetlist };
+module.exports = { roomIds, getImageSetlist };
