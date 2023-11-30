@@ -14,5 +14,3 @@ app.get('/', (req, res) => {
     message: "Welcome to JKT48 Showroom Wrapped"
   });
 });
-
-app.use('/', routes)
