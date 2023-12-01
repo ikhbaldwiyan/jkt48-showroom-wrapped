@@ -23,9 +23,7 @@ exports.getMostWatchRoom = async (req, res) => {
     const mostVisitRoom = roomData
       .map((item) => ({
         name: item.room_url_key ? item.room_url_key.replace("JKT48_", "") : "",
-        image: item.image_square
-          ? item.image_square.replace("_m.jpeg", "_l.jpeg")
-          : "",
+        image: `/img/${item.room_url_key.replace("JKT48_", "").toLowerCase()}.jpeg`,
         visit: item.visit_count || 0,
       }))
       .sort((a, b) => b.visit - a.visit);
