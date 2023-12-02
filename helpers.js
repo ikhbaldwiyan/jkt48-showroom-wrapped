@@ -1,3 +1,5 @@
+const axios = require("axios");
+
 const roomIds = [
   317738, 318117, 318118, 318204, 318207, 318208, 318209, 318222, 318223,
   318224, 318225, 318228, 318232, 318227, 318230, 318112, 318218, 318210,
@@ -22,4 +24,15 @@ const getImageSetlist = (name) => {
   }
 };
 
-module.exports = { roomIds, getImageSetlist };
+const getImageBase64 = async (url) => {
+  try {
+    let image = await axios.get(url, { responseType: "arraybuffer" });
+    let data = Buffer.from(image.data).toString("base64");
+    return `data:image/jpeg;base64,${data}`;
+  } catch (error) {
+    console.error("Error fetching image:", error);
+    return ""; // Default image or error placeholder
+  }
+};
+
+module.exports = { roomIds, getImageSetlist, getImageBase64 };

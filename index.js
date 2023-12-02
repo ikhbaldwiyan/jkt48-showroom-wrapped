@@ -17,10 +17,6 @@ app.get('/', (req, res) => {
 
 app.use('/', routes);
 
-app.all('*', (req, res) => {
-  res.sendFile('index.html', { root: 'public' });
-});
-
 app.listen(PORT, () => {
   console.log(`Server is running on port http://localhost:${PORT}`);
 });
