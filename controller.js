@@ -128,7 +128,7 @@ exports.getPremiumLiveHistory = async (req, res) => {
       "Ingin Bertemu",
       "Tunas di Balik Seragam",
       "Banzai",
-      "Pajama Drive",
+      "Pajama",
       "11th Anniversary Event",
     ];
 
