@@ -1,0 +1,461 @@
+[
+    {
+        "name": "Gita",
+        "full_name": "Gita Sekar Andarini",
+        "room_id": 318117,
+        "total_live": {
+            "idn": 50,
+            "sr_count": 7
+        }
+    },
+    {
+        "name": "Muthe",
+        "full_name": "Mutiara Azzahra",
+        "room_id": 318204,
+        "total_live": {
+            "idn": 40,
+            "sr_count": 18
+        }
+    },
+    {
+        "name": "Gracia",
+        "full_name": "Shania Gracia",
+        "room_id": 318208,
+        "total_live": {
+            "idn": 8,
+            "sr_count": 19
+        }
+    },
+    {
+        "name": "Ella",
+        "full_name": "Gabriela Abigail Mewengkang",
+        "room_id": 400715,
+        "total_live": {
+            "idn": 9,
+            "sr_count": 7
+        }
+    },
+    {
+        "name": "Christy",
+        "full_name": "Angelina Christy",
+        "room_id": 318112,
+        "total_live": {
+            "idn": 7,
+            "sr_count": 11
+        }
+    },
+    {
+        "name": "Lulu",
+        "full_name": "Lulu Salsabila",
+        "room_id": 318232,
+        "total_live": {
+            "idn": 43,
+            "sr_count": 22
+        }
+    },
+    {
+        "name": "Lia",
+        "full_name": "Aurellia",
+        "room_id": 400713,
+        "total_live": {
+            "idn": 42,
+            "sr_count": 66
+        }
+    },
+    {
+        "name": "Jessi",
+        "full_name": "Jessica Chandra",
+        "room_id": 318228,
+        "total_live": {
+            "idn": 21,
+            "sr_count": 36
+        }
+    },
+    {
+        "name": "Flora",
+        "full_name": "Flora Shafiq",
+        "room_id": 318224,
+        "total_live": {
+            "idn": 3,
+            "sr_count": 3
+        }
+    },
+    {
+        "name": "Olla",
+        "full_name": "Febriola Sinambela",
+        "room_id": 318222,
+        "total_live": {
+            "idn": 32,
+            "sr_count": 27
+        }
+    },
+    {
+        "name": "Amanda",
+        "full_name": "Amanda Puspita Sukma Mulyadewi",
+        "room_id": 400710,
+        "total_live": {
+            "idn": 19,
+            "sr_count": 6
+        }
+    },
+    {
+        "name": "Kathrina",
+        "full_name": "Kathrina Irene",
+        "room_id": 318230,
+        "total_live": {
+            "idn": 7,
+            "sr_count": 13
+        }
+    },
+    {
+        "name": "Indira",
+        "full_name": "Indira Putri Seruni",
+        "room_id": 400716,
+        "total_live": {
+            "idn": 32,
+            "sr_count": 1
+        }
+    },
+    {
+        "name": "Feni",
+        "full_name": "Feni Fitriyanti",
+        "room_id": 317738,
+        "total_live": {
+            "idn": 0,
+            "sr_count": 39
+        }
+    },
+    {
+        "name": "Freya",
+        "full_name": "Freya Jayawardana",
+        "room_id": 318225,
+        "total_live": {
+            "idn": 1,
+            "sr_count": 4
+        }
+    },
+    {
+        "name": "Oniel",
+        "full_name": "Cornelia Vanisa",
+        "room_id": 318218,
+        "total_live": {
+            "idn": 48,
+            "sr_count": 17
+        }
+    },
+    {
+        "name": "Fiony",
+        "full_name": "Fiony Alveria",
+        "room_id": 318223,
+        "total_live": {
+            "idn": 26,
+            "sr_count": 19
+        }
+    },
+    {
+        "name": "Eli",
+        "full_name": "Helisma Putri",
+        "room_id": 318118,
+        "total_live": {
+            "idn": 19,
+            "sr_count": 19
+        }
+    },
+    {
+        "name": "Marsha",
+        "full_name": "Marsha Lenathea",
+        "room_id": 318233,
+        "total_live": {
+            "idn": 6,
+            "sr_count": 11
+        }
+    },
+    {
+        "name": "Lyn",
+        "full_name": "Jesslyn Elly",
+        "room_id": 400717,
+        "total_live": {
+            "idn": 29,
+            "sr_count": 34
+        }
+    },
+    {
+        "name": "Raisha",
+        "full_name": "Raisha Syifa Wardhana",
+        "room_id": 400718,
+        "total_live": {
+            "idn": 1,
+            "sr_count": 17
+        }
+    },
+    {
+        "name": "Indah",
+        "full_name": "Indah Cahya Nabilla",
+        "room_id": 318227,
+        "total_live": {
+            "idn": 105,
+            "sr_count": 5
+        }
+    },
+    {
+        "name": "Callie",
+        "full_name": "Callista Alifia Wardhana",
+        "room_id": 400714,
+        "total_live": {
+            "idn": 2,
+            "sr_count": 9
+        }
+    },
+    {
+        "name": "Alya",
+        "full_name": "Alya Amanda",
+        "room_id": 461451,
+        "total_live": {
+            "idn": 59,
+            "sr_count": 18
+        }
+    },
+    {
+        "name": "Anindya",
+        "full_name": "Anindya Ramadhani",
+        "room_id": 461452,
+        "total_live": {
+            "idn": 82,
+            "sr_count": 11
+        }
+    },
+    {
+        "name": "Cathy",
+        "full_name": "Cathleen Nixie",
+        "room_id": 461454,
+        "total_live": {
+            "idn": 86,
+            "sr_count": 21
+        }
+    },
+    {
+        "name": "Elin",
+        "full_name": "Celline Thefani",
+        "room_id": 461475,
+        "total_live": {
+            "idn": 65,
+            "sr_count": 27
+        }
+    },
+    {
+        "name": "Chelsea",
+        "full_name": "Chelsea Davina",
+        "room_id": 461458,
+        "total_live": {
+            "idn": 79,
+            "sr_count": 21
+        }
+    },
+    {
+        "name": "Cynthia",
+        "full_name": "Cynthia Yaputera",
+        "room_id": 461463,
+        "total_live": {
+            "idn": 80,
+            "sr_count": 31
+        }
+    },
+    {
+        "name": "Danella",
+        "full_name": "Dena Natalia",
+        "room_id": 461466,
+        "total_live": {
+            "idn": 121,
+            "sr_count": 19
+        }
+    },
+    {
+        "name": "Daisy",
+        "full_name": "Desy Natalia",
+        "room_id": 461465,
+        "total_live": {
+            "idn": 107,
+            "sr_count": 32
+        }
+    },
+    {
+        "name": "Gendis",
+        "full_name": "Gendis Mayrannisa",
+        "room_id": 461476,
+        "total_live": {
+            "idn": 59,
+            "sr_count": 9
+        }
+    },
+    {
+        "name": "Gracie",
+        "full_name": "Grace Octaviani",
+        "room_id": 461478,
+        "total_live": {
+            "idn": 69,
+            "sr_count": 32
+        }
+    },
+    {
+        "name": "Greesel",
+        "full_name": "Greesella Adhalia",
+        "room_id": 461479,
+        "total_live": {
+            "idn": 67,
+            "sr_count": 18
+        }
+    },
+    {
+        "name": "Michie",
+        "full_name": "Michelle Alexandra",
+        "room_id": 461481,
+        "total_live": {
+            "idn": 66,
+            "sr_count": 7
+        }
+    },
+    {
+        "name": "Aralie",
+        "full_name": "Abigail Rachel",
+        "room_id": 509985,
+        "total_live": {
+            "idn": 113,
+            "sr_count": 23
+        }
+    },
+    {
+        "name": "Delynn",
+        "full_name": "Adeline Wijaya",
+        "room_id": 509992,
+        "total_live": {
+            "idn": 120,
+            "sr_count": 20
+        }
+    },
+    {
+        "name": "Lana",
+        "full_name": "Aurhel Alana",
+        "room_id": 509997,
+        "total_live": {
+            "idn": 114,
+            "sr_count": 37
+        }
+    },
+    {
+        "name": "Erine",
+        "full_name": "Catherina Vallencia",
+        "room_id": 510000,
+        "total_live": {
+            "idn": 91,
+            "sr_count": 38
+        }
+    },
+    {
+        "name": "Fritzy",
+        "full_name": "Fritzy Rosmerian",
+        "room_id": 510011,
+        "total_live": {
+            "idn": 98,
+            "sr_count": 23
+        }
+    },
+    {
+        "name": "Lily",
+        "full_name": "Hillary Abigail",
+        "room_id": 510012,
+        "total_live": {
+            "idn": 130,
+            "sr_count": 38
+        }
+    },
+    {
+        "name": "Trisha",
+        "full_name": "Jazzlyn Trisha",
+        "room_id": 510013,
+        "total_live": {
+            "idn": 37,
+            "sr_count": 19
+        }
+    },
+    {
+        "name": "Moreen",
+        "full_name": "Letycia Moreen",
+        "room_id": 510014,
+        "total_live": {
+            "idn": 42,
+            "sr_count": 19
+        }
+    },
+    {
+        "name": "Levi",
+        "full_name": "Michelle Levia",
+        "room_id": 510016,
+        "total_live": {
+            "idn": 107,
+            "sr_count": 33
+        }
+    },
+    {
+        "name": "Nayla",
+        "full_name": "Nayla Suji Aurelia",
+        "room_id": 510064,
+        "total_live": {
+            "idn": 84,
+            "sr_count": 33
+        }
+    },
+    {
+        "name": "Nachia",
+        "full_name": "Nina Tutachia",
+        "room_id": 510065,
+        "total_live": {
+            "idn": 64,
+            "sr_count": 25
+        }
+    },
+    {
+        "name": "Oline",
+        "full_name": "Oline Manuel",
+        "room_id": 510067,
+        "total_live": {
+            "idn": 53,
+            "sr_count": 20
+        }
+    },
+    {
+        "name": "Regie",
+        "full_name": "Regina Wilian",
+        "room_id": 510068,
+        "total_live": {
+            "idn": 102,
+            "sr_count": 26
+        }
+    },
+    {
+        "name": "Ribka",
+        "full_name": "Ribka Budiman",
+        "room_id": 510070,
+        "total_live": {
+            "idn": 123,
+            "sr_count": 24
+        }
+    },
+    {
+        "name": "Nala",
+        "full_name": "Shabilqis Naila",
+        "room_id": 510071,
+        "total_live": {
+            "idn": 82,
+            "sr_count": 28
+        }
+    },
+    {
+        "name": "Kimmy",
+        "full_name": "Victoria Kimberly",
+        "room_id": 510073,
+        "total_live": {
+            "idn": 64,
+            "sr_count": 14
+        }
+    }
+]

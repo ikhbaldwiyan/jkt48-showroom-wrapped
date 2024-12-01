@@ -1,58 +1,101 @@
 const axios = require("axios");
 const cheerio = require("cheerio");
-const { roomIds, getImageSetlist, getImageBase64 } = require("./helpers");
+const { getImageSetlist, getImageBase64, roomTrainee } = require("./helpers");
+const roomData2024 = require("./data.json"); // Load your JSON file
 
 exports.getMostWatchRoom = async (req, res) => {
   try {
     const { token } = req.body;
-    const promises = Object.values(roomIds).map(async (room_id) => {
-      const response = await axios.get(
-        `https://www.showroom-live.com/api/room/profile?room_id=${room_id}`,
-        {
-          headers: {
-            Cookie: token || "",
-          },
-        }
-      );
 
-      return response.data;
-    });
+    // Limit concurrent requests to prevent overwhelming the API
+    const CONCURRENT_LIMIT = 5;
+    const roomChunks = [];
 
-    const roomData = await Promise.all(promises);
+    // Split roomData2024 into chunks for controlled concurrent processing
+    for (let i = 0; i < roomData2024.length; i += CONCURRENT_LIMIT) {
+      roomChunks.push(roomData2024.slice(i, i + CONCURRENT_LIMIT));
+    }
 
-    Promise.all(
-      roomData.map(async (item) => {
+    const allRoomData = [];
+
+    // Process room data in controlled batches
+    for (const chunk of roomChunks) {
+      const chunkPromises = chunk.map(async (data) => {
+        const room_id = data?.room_id;
         try {
-          const base64Image = await getImageBase64(item.image_square);
+          // Use axios cancelToken for timeout protection
+          const source = axios.CancelToken.source();
+          const timeoutId = setTimeout(() => {
+            source.cancel(`Request for room_id ${room_id} timed out`);
+          }, 3000); // 3 seconds timeout
+
+          const response = await axios.get(
+            `https://www.showroom-live.com/api/room/profile?room_id=${room_id}`,
+            {
+              headers: {
+                Cookie: token || ""
+              },
+              cancelToken: source.token
+            }
+          );
+
+          clearTimeout(timeoutId);
+
+          const base64Image = await getImageBase64(response?.data?.image_square);
+
           return {
-            name: item.room_url_key
-              ? item.room_url_key.replace("JKT48_", "")
-              : "",
+            room_id: response?.data?.room_id,
+            name: data?.name,
             image: base64Image,
-            visit: item.visit_count || 0,
+            total_live_member: data?.total_live?.sr_count,
+            all_visit: response?.data?.visit_count
           };
         } catch (error) {
-          console.error("Error converting image:", error);
-          return {
-            name: item.room_url_key
-              ? item.room_url_key.replace("JKT48_", "")
-              : "",
-            image: "", // Default image or error placeholder
-            visit: item.visit_count || 0,
-          };
+          console.error(
+            `Error fetching room data for room_id ${room_id}:`,
+            error.message
+          );
+          return null;
         }
-      })
-    )
-      .then((mostVisitRoom) => {
-        const sortedMostVisitRoom = mostVisitRoom.sort((a, b) => b.visit - a.visit);
-        res.send(sortedMostVisitRoom);
-      })
-      .catch((error) => {
-        console.error("Error processing data:", error);
-        res.status(500).send("Internal Server Error");
       });
+
+      // Wait for chunk to complete before moving to next
+      const chunkResults = await Promise.all(chunkPromises);
+      allRoomData.push(...chunkResults.filter(Boolean));
+    }
+
+    // Memoize trainee room calculation to avoid repeated checks
+    const isTraineeRoom = new Set(roomTrainee);
+
+    const processedRoomData = allRoomData.map((room) => {
+      if (isTraineeRoom.has(room.room_id)) {
+        return {
+          ...room,
+          visit_2024: room.all_visit,
+        };
+      }
+
+      const engagementRatio =
+        room.total_live_member > 0
+          ? Math.min(1, room.all_visit / (room.total_live_member * 4))
+          : 0;
+
+      const visit_2024 = Math.min(
+        Math.ceil(room.total_live_member * engagementRatio),
+        room.total_live_member
+      );
+
+      return {
+        ...room,
+        visit_2024
+      };
+    });
+
+    processedRoomData.sort((a, b) => b.visit_2024 - a.visit_2024);
+
+    res.json(processedRoomData);
   } catch (error) {
-    console.error(error);
+    console.error("Error in getMostWatchRoomFor2024:", error);
     res.status(500).json({ error: "Internal Server Error" });
   }
 };
