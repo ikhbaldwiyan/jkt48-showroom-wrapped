@@ -41,11 +41,11 @@ exports.getMostWatchRoom = async (req, res) => {
 
           clearTimeout(timeoutId);
 
-          const base64Image = await getImageBase64(response?.data?.image_square);
+          const base64Image = await getImageBase64(response?.data?.image);
 
           return {
             room_id: response?.data?.room_id,
-            name: data?.name,
+            name: data?.full_name,
             image: base64Image,
             total_live_member: data?.total_live?.sr_count,
             all_visit: response?.data?.visit_count
