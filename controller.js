@@ -23,11 +23,6 @@ exports.getMostWatchRoom = async (req, res) => {
       const chunkPromises = chunk.map(async (data) => {
         const room_id = data?.room_id;
         try {
-          // Use axios cancelToken for timeout protection
-          const source = axios.CancelToken.source();
-          const timeoutId = setTimeout(() => {
-            source.cancel(`Request for room_id ${room_id} timed out`);
-          }, 3000); // 3 seconds timeout
 
           const response = await axios.get(
             `https://www.showroom-live.com/api/room/profile?room_id=${room_id}`,
@@ -35,11 +30,8 @@ exports.getMostWatchRoom = async (req, res) => {
               headers: {
                 Cookie: token || ""
               },
-              cancelToken: source.token
             }
           );
-
-          clearTimeout(timeoutId);
 
           const base64Image = await getImageBase64(response?.data?.image);
 
@@ -51,6 +43,7 @@ exports.getMostWatchRoom = async (req, res) => {
             all_visit: response?.data?.visit_count
           };
         } catch (error) {
+          console.log(error)
           console.error(
             `Error fetching room data for room_id ${room_id}:`,
             error.message
